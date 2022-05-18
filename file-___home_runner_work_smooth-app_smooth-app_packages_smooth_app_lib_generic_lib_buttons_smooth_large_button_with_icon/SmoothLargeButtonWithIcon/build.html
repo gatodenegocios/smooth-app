@@ -21,8 +21,7 @@
 </head>
 
 
-<body data-base-href="../../"
-      data-using-base-href="false">
+<body data-base-href="../../" data-using-base-href="false">
 
 <div id="overlay-under-drawer"></div>
 
@@ -76,6 +75,10 @@ Widget build(BuildContext context) {
   final bool isDarkMode =
       Provider.of&lt;ThemeProvider&gt;(context, listen: false).isDarkMode(context);
   return SmoothSimpleButton(
+    minWidth: double.infinity,
+    padding: padding ?? const EdgeInsets.all(10),
+    buttonColor: isDarkMode ? Colors.grey : const Color(0xffeaf5fb),
+    onPressed: onPressed,
     child: Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: &lt;Widget&gt;[
@@ -101,10 +104,6 @@ Widget build(BuildContext context) {
         const Spacer(),
       ],
     ),
-    minWidth: double.infinity,
-    padding: padding ?? const EdgeInsets.all(10),
-    buttonColor: isDarkMode ? Colors.grey : const Color(0xffeaf5fb),
-    onPressed: onPressed,
   );
 }</code></pre>
 </section>
@@ -130,8 +129,8 @@ Widget build(BuildContext context) {
     <h5>SmoothLargeButtonWithIcon class</h5>
     <ol>
 
-    <li class="section-title"><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_generic_lib_buttons_smooth_large_button_with_icon/SmoothLargeButtonWithIcon-class.html#constructors">Constructors</a></li>
-    <li><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_generic_lib_buttons_smooth_large_button_with_icon/SmoothLargeButtonWithIcon/SmoothLargeButtonWithIcon.html">SmoothLargeButtonWithIcon</a></li>
+        <li class="section-title"><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_generic_lib_buttons_smooth_large_button_with_icon/SmoothLargeButtonWithIcon-class.html#constructors">Constructors</a></li>
+          <li><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_generic_lib_buttons_smooth_large_button_with_icon/SmoothLargeButtonWithIcon/SmoothLargeButtonWithIcon.html">SmoothLargeButtonWithIcon</a></li>
 
 
     <li class="section-title">
@@ -176,7 +175,7 @@ Widget build(BuildContext context) {
 
 
 <script src="../../static-assets/highlight.pack.js?v1"></script>
-<script src="../../static-assets/script.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
 
 
 

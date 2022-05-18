@@ -21,8 +21,7 @@
 </head>
 
 
-<body data-base-href="../../"
-      data-using-base-href="false">
+<body data-base-href="../../" data-using-base-href="false">
 
 <div id="overlay-under-drawer"></div>
 
@@ -68,13 +67,13 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">int getAppVisits() {
-  const String _userVisits = &#39;appVisits&#39;;
+  const String userVisits = &#39;appVisits&#39;;
 
   final DaoInt daoInt = DaoInt(_localDatabase);
 
-  int visits = daoInt.get(_userVisits) ?? 0;
+  int visits = daoInt.get(userVisits) ?? 0;
   visits++;
-  daoInt.put(_userVisits, visits);
+  daoInt.put(userVisits, visits);
 
   return visits;
 }</code></pre>
@@ -101,8 +100,8 @@
     <h5>TrackingDatabaseHelper class</h5>
     <ol>
 
-    <li class="section-title"><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_helpers_tracking_database_helper/TrackingDatabaseHelper-class.html#constructors">Constructors</a></li>
-    <li><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_helpers_tracking_database_helper/TrackingDatabaseHelper/TrackingDatabaseHelper.html">TrackingDatabaseHelper</a></li>
+        <li class="section-title"><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_helpers_tracking_database_helper/TrackingDatabaseHelper-class.html#constructors">Constructors</a></li>
+          <li><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_helpers_tracking_database_helper/TrackingDatabaseHelper/TrackingDatabaseHelper.html">TrackingDatabaseHelper</a></li>
 
 
     <li class="section-title inherited">
@@ -145,7 +144,7 @@
 
 
 <script src="../../static-assets/highlight.pack.js?v1"></script>
-<script src="../../static-assets/script.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
 
 
 

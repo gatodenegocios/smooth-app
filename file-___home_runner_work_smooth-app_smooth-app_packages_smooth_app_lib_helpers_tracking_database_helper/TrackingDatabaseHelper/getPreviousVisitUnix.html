@@ -21,8 +21,7 @@
 </head>
 
 
-<body data-base-href="../../"
-      data-using-base-href="false">
+<body data-base-href="../../" data-using-base-href="false">
 
 <div id="overlay-under-drawer"></div>
 
@@ -65,14 +64,14 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">int? getPreviousVisitUnix() {
-  const String _latestVisit = &#39;previousVisitUnix&#39;;
+  const String latestVisitKey = &#39;previousVisitUnix&#39;;
 
   final DaoInt daoInt = DaoInt(_localDatabase);
 
-  final int? latestVisit = daoInt.get(_latestVisit);
+  final int? latestVisit = daoInt.get(latestVisitKey);
 
   daoInt.put(
-    _latestVisit,
+    latestVisitKey,
     DateTime.now().millisecondsSinceEpoch,
   );
 
@@ -101,8 +100,8 @@
     <h5>TrackingDatabaseHelper class</h5>
     <ol>
 
-    <li class="section-title"><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_helpers_tracking_database_helper/TrackingDatabaseHelper-class.html#constructors">Constructors</a></li>
-    <li><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_helpers_tracking_database_helper/TrackingDatabaseHelper/TrackingDatabaseHelper.html">TrackingDatabaseHelper</a></li>
+        <li class="section-title"><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_helpers_tracking_database_helper/TrackingDatabaseHelper-class.html#constructors">Constructors</a></li>
+          <li><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_helpers_tracking_database_helper/TrackingDatabaseHelper/TrackingDatabaseHelper.html">TrackingDatabaseHelper</a></li>
 
 
     <li class="section-title inherited">
@@ -145,7 +144,7 @@
 
 
 <script src="../../static-assets/highlight.pack.js?v1"></script>
-<script src="../../static-assets/script.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
 
 
 

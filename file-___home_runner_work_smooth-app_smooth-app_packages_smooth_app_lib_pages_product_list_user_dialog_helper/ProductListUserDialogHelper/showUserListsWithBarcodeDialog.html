@@ -21,8 +21,7 @@
 </head>
 
 
-<body data-base-href="../../"
-      data-using-base-href="false">
+<body data-base-href="../../" data-using-base-href="false">
 
 <div id="overlay-under-drawer"></div>
 
@@ -74,7 +73,7 @@
   final Product product,
 ) async {
   final String barcode = product.barcode!;
-  final AppLocalizations appLocalizations = AppLocalizations.of(context)!;
+  final AppLocalizations appLocalizations = AppLocalizations.of(context);
   final List&lt;String&gt; all = daoProductList.getUserLists();
   final List&lt;String&gt; withBarcode =
       daoProductList.getUserLists(withBarcode: barcode);
@@ -88,37 +87,33 @@
           (BuildContext context, void Function(VoidCallback fn) setState) =&gt;
               AlertDialog(
         title: Text(getProductName(product, appLocalizations)),
-        content: all.isEmpty
-            ? Container()
-            : SizedBox(
-                &#47;&#47; TODO(monsieurtanuki): proper sizes
-                width: 300,
-                height: 400,
-                child: StatefulBuilder(
-                  builder: (BuildContext context,
-                      void Function(VoidCallback fn) setState) {
-                    final List&lt;Widget&gt; children = &lt;Widget&gt;[];
-                    for (final String name in all) {
-                      children.add(
-                        ListTile(
-                          leading: Icon(
-                            newWithBarcode.contains(name)
-                                ? Icons.check_box
-                                : Icons.check_box_outline_blank,
-                          ),
-                          title: Text(name),
-                          onTap: () =&gt; setState(
-                            () =&gt; newWithBarcode.contains(name)
-                                ? newWithBarcode.remove(name)
-                                : newWithBarcode.add(name),
-                          ),
-                        ),
-                      );
-                    }
-                    return ListView(children: children);
-                  },
+        content: StatefulBuilder(
+          builder: (BuildContext context,
+              void Function(VoidCallback fn) setState) {
+            final List&lt;Widget&gt; children = &lt;Widget&gt;[];
+            for (final String name in all) {
+              children.add(
+                ListTile(
+                  leading: Icon(
+                    newWithBarcode.contains(name)
+                        ? Icons.check_box
+                        : Icons.check_box_outline_blank,
+                  ),
+                  title: Text(name),
+                  onTap: () =&gt; setState(
+                    () =&gt; newWithBarcode.contains(name)
+                        ? newWithBarcode.remove(name)
+                        : newWithBarcode.add(name),
+                  ),
                 ),
-              ),
+              );
+            }
+            return ListView(
+              shrinkWrap: true,
+              children: children,
+            );
+          },
+        ),
         actions: &lt;Widget&gt;[
           TextButton(
             onPressed: () =&gt; Navigator.pop(context),
@@ -158,8 +153,7 @@
       continue;
     }
     final ProductList productList = ProductList.user(name);
-    await daoProductList.set(
-        productList, barcode, newWithBarcode.contains(name));
+    daoProductList.set(productList, barcode, newWithBarcode.contains(name));
   }
   return true;
 }</code></pre>
@@ -186,8 +180,8 @@
     <h5>ProductListUserDialogHelper class</h5>
     <ol>
 
-    <li class="section-title"><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_pages_product_list_user_dialog_helper/ProductListUserDialogHelper-class.html#constructors">Constructors</a></li>
-    <li><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_pages_product_list_user_dialog_helper/ProductListUserDialogHelper/ProductListUserDialogHelper.html">ProductListUserDialogHelper</a></li>
+        <li class="section-title"><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_pages_product_list_user_dialog_helper/ProductListUserDialogHelper-class.html#constructors">Constructors</a></li>
+          <li><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_pages_product_list_user_dialog_helper/ProductListUserDialogHelper/ProductListUserDialogHelper.html">ProductListUserDialogHelper</a></li>
 
 
     <li class="section-title">
@@ -200,6 +194,7 @@
     <li class="section-title"><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_pages_product_list_user_dialog_helper/ProductListUserDialogHelper-class.html#instance-methods">Methods</a></li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
     <li><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_pages_product_list_user_dialog_helper/ProductListUserDialogHelper/showCreateUserListDialog.html">showCreateUserListDialog</a></li>
+    <li><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_pages_product_list_user_dialog_helper/ProductListUserDialogHelper/showDeleteUserListDialog.html">showDeleteUserListDialog</a></li>
     <li><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_pages_product_list_user_dialog_helper/ProductListUserDialogHelper/showRenameUserListDialog.html">showRenameUserListDialog</a></li>
     <li><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_pages_product_list_user_dialog_helper/ProductListUserDialogHelper/showUserListsWithBarcodeDialog.html">showUserListsWithBarcodeDialog</a></li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>
@@ -231,7 +226,7 @@
 
 
 <script src="../../static-assets/highlight.pack.js?v1"></script>
-<script src="../../static-assets/script.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
 
 
 

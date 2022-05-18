@@ -21,8 +21,7 @@
 </head>
 
 
-<body data-base-href="../../"
-      data-using-base-href="false">
+<body data-base-href="../../" data-using-base-href="false">
 
 <div id="overlay-under-drawer"></div>
 
@@ -72,7 +71,7 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
-  final AppLocalizations appLocalizations = AppLocalizations.of(context)!;
+  final AppLocalizations appLocalizations = AppLocalizations.of(context);
   return ChangeNotifierProvider&lt;SelectedCategoryModel&gt;(
     create: (BuildContext context) =&gt;
         SelectedCategoryModel(categories, categoriesList),
@@ -204,7 +203,7 @@ Widget build(BuildContext context) {
                               horizontal: 12.0, vertical: 20.0),
                           child: SmoothMainButton(
                             text:
-                                AppLocalizations.of(context)!.applyButtonText,
+                                AppLocalizations.of(context).applyButtonText,
                             onPressed: () {
                               Navigator.pop(context);
                               callback(
@@ -247,8 +246,8 @@ Widget build(BuildContext context) {
     <h5>GroupQueryFilterView class</h5>
     <ol>
 
-    <li class="section-title"><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_views_bottom_sheet_views_group_query_filter_view/GroupQueryFilterView-class.html#constructors">Constructors</a></li>
-    <li><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_views_bottom_sheet_views_group_query_filter_view/GroupQueryFilterView/GroupQueryFilterView.html">GroupQueryFilterView</a></li>
+        <li class="section-title"><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_views_bottom_sheet_views_group_query_filter_view/GroupQueryFilterView-class.html#constructors">Constructors</a></li>
+          <li><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_views_bottom_sheet_views_group_query_filter_view/GroupQueryFilterView/GroupQueryFilterView.html">GroupQueryFilterView</a></li>
 
 
     <li class="section-title">
@@ -292,7 +291,7 @@ Widget build(BuildContext context) {
 
 
 <script src="../../static-assets/highlight.pack.js?v1"></script>
-<script src="../../static-assets/script.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
 
 
 

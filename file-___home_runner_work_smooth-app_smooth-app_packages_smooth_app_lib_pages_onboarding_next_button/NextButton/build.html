@@ -21,8 +21,7 @@
 </head>
 
 
-<body data-base-href="../../"
-      data-using-base-href="false">
+<body data-base-href="../../" data-using-base-href="false">
 
 <div id="overlay-under-drawer"></div>
 
@@ -73,7 +72,7 @@
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
   final Size screenSize = MediaQuery.of(context).size;
-  final AppLocalizations appLocalizations = AppLocalizations.of(context)!;
+  final AppLocalizations appLocalizations = AppLocalizations.of(context);
   final UserPreferences userPreferences = context.watch&lt;UserPreferences&gt;();
   final LocalDatabase localDatabase = context.watch&lt;LocalDatabase&gt;();
   &#47;&#47; Side padding is 8% of total width.
@@ -98,6 +97,7 @@ Widget build(BuildContext context) {
           onPressed: () async {
             await OnboardingLoader(localDatabase)
                 .runAtNextTime(currentPage, context);
+            &#47;&#47;ignore: use_build_context_synchronously
             OnboardingFlowNavigator(userPreferences).navigateToPage(
                 context, OnboardingFlowNavigator.getNextPage(currentPage));
           },
@@ -133,8 +133,8 @@ Widget build(BuildContext context) {
     <h5>NextButton class</h5>
     <ol>
 
-    <li class="section-title"><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_pages_onboarding_next_button/NextButton-class.html#constructors">Constructors</a></li>
-    <li><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_pages_onboarding_next_button/NextButton/NextButton.html">NextButton</a></li>
+        <li class="section-title"><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_pages_onboarding_next_button/NextButton-class.html#constructors">Constructors</a></li>
+          <li><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_pages_onboarding_next_button/NextButton/NextButton.html">NextButton</a></li>
 
 
     <li class="section-title">
@@ -176,7 +176,7 @@ Widget build(BuildContext context) {
 
 
 <script src="../../static-assets/highlight.pack.js?v1"></script>
-<script src="../../static-assets/script.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
 
 
 

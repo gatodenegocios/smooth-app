@@ -21,8 +21,7 @@
 </head>
 
 
-<body data-base-href="../../"
-      data-using-base-href="false">
+<body data-base-href="../../" data-using-base-href="false">
 
 <div id="overlay-under-drawer"></div>
 
@@ -74,15 +73,15 @@
 Widget build(BuildContext context) {
   final ThemeData themeData = Theme.of(context);
   return SmoothSimpleButton(
+    onPressed: onPressed,
+    height: height,
+    minWidth: minWidth,
     child: AutoSizeText(
       text,
       style: themeData.textTheme.bodyText2!
           .copyWith(color: themeData.colorScheme.onPrimary),
       maxLines: 1,
     ),
-    onPressed: onPressed,
-    height: height,
-    minWidth: minWidth,
   );
 }</code></pre>
 </section>
@@ -108,8 +107,8 @@ Widget build(BuildContext context) {
     <h5>SmoothActionButton class</h5>
     <ol>
 
-    <li class="section-title"><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_generic_lib_buttons_smooth_action_button/SmoothActionButton-class.html#constructors">Constructors</a></li>
-    <li><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_generic_lib_buttons_smooth_action_button/SmoothActionButton/SmoothActionButton.html">SmoothActionButton</a></li>
+        <li class="section-title"><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_generic_lib_buttons_smooth_action_button/SmoothActionButton-class.html#constructors">Constructors</a></li>
+          <li><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_generic_lib_buttons_smooth_action_button/SmoothActionButton/SmoothActionButton.html">SmoothActionButton</a></li>
 
 
     <li class="section-title">
@@ -154,7 +153,7 @@ Widget build(BuildContext context) {
 
 
 <script src="../../static-assets/highlight.pack.js?v1"></script>
-<script src="../../static-assets/script.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
 
 
 

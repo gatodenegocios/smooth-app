@@ -21,8 +21,7 @@
 </head>
 
 
-<body data-base-href="../../"
-      data-using-base-href="false">
+<body data-base-href="../../" data-using-base-href="false">
 
 <div id="overlay-under-drawer"></div>
 
@@ -52,7 +51,7 @@
     <section class="multi-line-signature">
       
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>&gt;</span></span>
 <span class="name ">onScan</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="onScan-param-code"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">code</span></span></li>
 </ol>)
 
@@ -60,28 +59,32 @@
 
     </section>
     
+<section class="desc markdown">
+  <p>Adds a barcode
+Will return <code>true</code> if this barcode is successfully added</p>
+</section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; onScan(String? code) async {
+  <pre class="language-dart"><code class="language-dart">Future&lt;bool&gt; onScan(String? code) async {
   if (code == null) {
-    return;
+    return false;
   }
 
   if (_barcodeTrustCheck != code) {
     _barcodeTrustCheck = code;
-    return;
+    return false;
   }
   if (_latestScannedBarcode == code || _barcodes.contains(code)) {
     lastConsultedBarcode = code;
-    return;
+    return false;
   }
   AnalyticsHelper.trackScannedProduct(barcode: code);
 
   _latestScannedBarcode = code;
-  _addBarcode(code);
+  return _addBarcode(code);
 }</code></pre>
 </section>
 
@@ -106,8 +109,8 @@
     <h5>ContinuousScanModel class</h5>
     <ol>
 
-    <li class="section-title"><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_data_models_continuous_scan_model/ContinuousScanModel-class.html#constructors">Constructors</a></li>
-    <li><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_data_models_continuous_scan_model/ContinuousScanModel/ContinuousScanModel.html">ContinuousScanModel</a></li>
+        <li class="section-title"><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_data_models_continuous_scan_model/ContinuousScanModel-class.html#constructors">Constructors</a></li>
+          <li><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_data_models_continuous_scan_model/ContinuousScanModel/ContinuousScanModel.html">ContinuousScanModel</a></li>
 
 
     <li class="section-title">
@@ -161,7 +164,7 @@
 
 
 <script src="../../static-assets/highlight.pack.js?v1"></script>
-<script src="../../static-assets/script.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
 
 
 

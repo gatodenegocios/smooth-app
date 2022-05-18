@@ -21,8 +21,7 @@
 </head>
 
 
-<body data-base-href="../"
-      data-using-base-href="false">
+<body data-base-href="../" data-using-base-href="false">
 
 <div id="overlay-under-drawer"></div>
 
@@ -66,6 +65,7 @@
   <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; openPersonalizedRankingPage(BuildContext context) async {
   final ContinuousScanModel model = context.read&lt;ContinuousScanModel&gt;();
   await model.refreshProductList();
+  &#47;&#47;ignore: use_build_context_synchronously
   await Navigator.push&lt;Widget&gt;(
     context,
     MaterialPageRoute&lt;Widget&gt;(
@@ -132,7 +132,7 @@
 
 
 <script src="../static-assets/highlight.pack.js?v1"></script>
-<script src="../static-assets/script.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
 
 
 

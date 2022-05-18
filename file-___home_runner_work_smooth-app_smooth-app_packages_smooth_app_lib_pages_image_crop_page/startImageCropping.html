@@ -21,8 +21,7 @@
 </head>
 
 
-<body data-base-href="../"
-      data-using-base-href="false">
+<body data-base-href="../" data-using-base-href="false">
 
 <div id="overlay-under-drawer"></div>
 
@@ -69,15 +68,16 @@
   final Color? themeColor = isDarktheme
       ? Colors.black
       : Theme.of(context).appBarTheme.backgroundColor;
+  final Color widgetColor = isDarktheme ? Colors.white : Colors.black;
+
   final ImagePicker picker = ImagePicker();
+  final AppLocalizations appLocalizations = AppLocalizations.of(context);
   final XFile? pickedXFile = await picker.pickImage(
     source: ImageSource.camera,
   );
   if (pickedXFile == null) {
     return null;
   }
-
-  final AppLocalizations appLocalizations = AppLocalizations.of(context)!;
 
   final CroppedFile? croppedFile = await ImageCropper().cropImage(
     sourcePath: pickedXFile.path,
@@ -95,7 +95,8 @@
         lockAspectRatio: false,
         statusBarColor: themeColor,
         toolbarColor: themeColor,
-        toolbarWidgetColor: Colors.white,
+        toolbarWidgetColor: widgetColor,
+        &#47;&#47;ignore: use_build_context_synchronously
         activeControlsWidgetColor: Theme.of(context).colorScheme.primary,
         backgroundColor: themeColor,
       ),
@@ -158,7 +159,7 @@
 
 
 <script src="../static-assets/highlight.pack.js?v1"></script>
-<script src="../static-assets/script.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
 
 
 

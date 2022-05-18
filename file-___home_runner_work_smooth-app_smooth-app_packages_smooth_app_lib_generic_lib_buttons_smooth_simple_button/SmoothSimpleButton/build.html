@@ -21,8 +21,7 @@
 </head>
 
 
-<body data-base-href="../../"
-      data-using-base-href="false">
+<body data-base-href="../../" data-using-base-href="false">
 
 <div id="overlay-under-drawer"></div>
 
@@ -75,16 +74,16 @@ Widget build(BuildContext context) {
   final ThemeData themeData = Theme.of(context);
   return MaterialButton(
     color: buttonColor ?? themeData.colorScheme.primary,
-    child: Padding(
-      padding: padding,
-      child: child,
-    ),
     height: height,
     minWidth: minWidth,
     shape: RoundedRectangleBorder(
       borderRadius: borderRadius,
     ),
-    onPressed: () =&gt; onPressed(),
+    onPressed: onPressed,
+    child: Padding(
+      padding: padding,
+      child: child,
+    ),
   );
 }</code></pre>
 </section>
@@ -110,8 +109,8 @@ Widget build(BuildContext context) {
     <h5>SmoothSimpleButton class</h5>
     <ol>
 
-    <li class="section-title"><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_generic_lib_buttons_smooth_simple_button/SmoothSimpleButton-class.html#constructors">Constructors</a></li>
-    <li><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_generic_lib_buttons_smooth_simple_button/SmoothSimpleButton/SmoothSimpleButton.html">SmoothSimpleButton</a></li>
+        <li class="section-title"><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_generic_lib_buttons_smooth_simple_button/SmoothSimpleButton-class.html#constructors">Constructors</a></li>
+          <li><a href="../../file-___home_runner_work_smooth-app_smooth-app_packages_smooth_app_lib_generic_lib_buttons_smooth_simple_button/SmoothSimpleButton/SmoothSimpleButton.html">SmoothSimpleButton</a></li>
 
 
     <li class="section-title">
@@ -159,7 +158,7 @@ Widget build(BuildContext context) {
 
 
 <script src="../../static-assets/highlight.pack.js?v1"></script>
-<script src="../../static-assets/script.js?v1"></script>
+<script src="../../static-assets/docs.dart.js"></script>
 
 
 
